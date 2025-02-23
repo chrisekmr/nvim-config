@@ -44,8 +44,6 @@ purple="#B388FF"
 blue="#06BCE4"
 cyan="#2CF9ED"
 
-export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
-
 # -- Use fd instead of fzf --
 
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
@@ -92,12 +90,6 @@ export BAT_THEME=tokyonight_night
 
 alias ls="eza -lah --icons=always"
 
-# ---- TheFuck -----
-
-# thefuck alias
-eval $(thefuck --alias)
-eval $(thefuck --alias fk)
-
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 
@@ -129,3 +121,6 @@ eval "$(pyenv init -)"
 export PATH="/home/christoph/.local/bin/zig-linux-x86_64-0.13.0-dev.211+6a65561e3/:$PATH"
 
 [ -f "/home/christoph/.ghcup/env" ] && . "/home/christoph/.ghcup/env" # ghcup-env
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
