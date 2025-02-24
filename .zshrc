@@ -107,3 +107,6 @@ export PATH="/home/christoph/.local/bin/zig-linux-x86_64-0.13.0-dev.211+6a65561e
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+if [ "$TMUX" = "" ]; then tmux; fi
+
