@@ -36,16 +36,7 @@ bindkey '^[[B' history-search-forward
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 
-# --- setup fzf theme ---
-fg="#CBE0F0"
-bg="#011628"
-bg_highlight="#143652"
-purple="#B388FF"
-blue="#06BCE4"
-cyan="#2CF9ED"
-
 # -- Use fd instead of fzf --
-
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
@@ -82,22 +73,12 @@ _fzf_comprun() {
   esac
 }
 
-# ----- Bat (better cat) -----
-
-export BAT_THEME=tokyonight_night
-
 # ---- Eza (better ls) -----
 
 alias ls="eza -lah --icons=always"
 
-# ---- Zoxide (better cd) ----
-eval "$(zoxide init zsh)"
-
-alias cd="z"
-
 alias reload-zsh="source ~/.zshrc"
 alias edit-zsh="nvim ~/.zshrc"
-
 
 alias vim='nvim'
 
@@ -106,6 +87,7 @@ alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 alias gsw='git switch'
+alias lg='lazygit'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -113,6 +95,7 @@ alias gsw='git switch'
 source /usr/share/nvm/init-nvm.sh
 
 export PATH="$HOME/zig:$PATH"
+export EDITOR='nvim'
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
